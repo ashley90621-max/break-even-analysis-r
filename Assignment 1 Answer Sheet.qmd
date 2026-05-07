@@ -19,7 +19,7 @@ editor_options:
   chunk_output_type: inline
 ---
 
-Candidate Number: Kuei Chun Liu
+Candidate Name: Kuei Chun Liu
 
 Self-reported word count: 1500 words
 
