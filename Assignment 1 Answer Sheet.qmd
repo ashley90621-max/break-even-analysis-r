@@ -1,0 +1,428 @@
+---
+title: "MSIN0094 First Assignment Answer Sheet"
+colorlinks: true
+code-line-numbers: true
+format:
+  docx: 
+    number-sections: true
+    toc: false
+    number-depth: 2
+    fontsize: 10pt
+    linestretch: 1.5
+knitr:
+  opts_chunk:
+    echo: true
+    warning: true
+    message: true
+    error: false
+editor_options: 
+  chunk_output_type: inline
+---
+
+Candidate Number: Kuei Chun Liu
+
+Self-reported word count: 1500 words
+
+# Market Analysis
+
+1.  \(1\) Conduct a situation analysis for Tom's new bubble tea shop. Discuss what each C is about in general terms, then further discuss each C in the context of bubble tea business.
+
+    **Company:**
+
+    Company analysis mainly focuses on evaluating a company’s positioning, identifying its strengths and weaknesses, and understanding its core competencies. It is an inward process to clarify the company’s mission and advantages in order to confirm its profit model.
+
+    In this case, the business model is to generate profit by selling bubble tea. The first strength is that Dr. Meow has deep knowledge of bubble tea, allowing them to develop appealing flavours. The second strength is their location in Canary Wharf, an area full of financial companies where employees have higher salaries, so prices can be set higher. Moreover, due to their limited break time and intense workload, a convenient and quick drink is a more attractive option than a meal that requires time to enjoy. The weakness is that they are a new brand with low recognition, making early-stage marketing more challenging. Additionally, as only two people are investing, their initial budget may be limited.
+
+    **Customers:**
+
+    Customers can be considered the most important “C” in the 5C analysis method, as this part focuses on understanding customers and their needs. The bubble tea shop is located in Canary Wharf, where the main consumer group consists of office workers, most of whom work in the financial industry. Therefore, their spending power is relatively high. The age range is roughly between 25 and 65. Typically, the majority are between 25 and 35 years old, who have fewer health concerns and prefer sweeter drinks. Demand slightly decreases among those aged 36–45, and further declines among those aged 46–65 due to health considerations.\
+    Since most are working adults, the retirement age is around 65, so groups above this age can be excluded. Therefore, I define the main target customers as office workers aged 25–35 in Canary Wharf. Their purchasing motivation lies in the fast-paced work environment, making drinks a quick and convenient choice, as well as a popular option for afternoon tea.
+
+    **Competitors:**
+
+    Competitors can be divided into four types: direct competitors, indirect competitors, potential competitors, and non-competitors. Generally, we mainly focus on direct competitors, while indirect competitors refer to companies that provide different products or services but satisfy the same customer needs, also known as substitutes.\
+    In this case, they could be other newly opened beverage or dessert shops, or even coffee shops. Potential competitors are companies that may pose a threat in the future, such as general restaurants that are actively expanding into the beverage business.
+
+    **Collaborators:**
+
+    Collaborators are entities that work with your company to help deliver your product or service to customers.
+
+    In this case, suppliers refer to beverage ingredient providers, which are expected to include tea, dairy products, pearls or other toppings, cups, and other hardware materials. Distributors can refer to major food delivery platforms in London, such as Uber Eats, Hungry Panda, Just Eat, and Deliveroo. Retailers mainly include the company’s own physical store and the online platforms used for delivery services.
+
+    **Context/Climate:**
+
+    It is a strategic planning method used to assess major external factors that influence the market ecosystem, and is often referred to as PESTLE analysis. P – Political: Local government policies affect food safety, import tariffs, and business licenses. The UK government has strict food hygiene standards, requiring businesses to obtain a Food Hygiene Certificate. E – Economic: The UK’s economic conditions, inflation, and living costs influence customers’ purchasing power. Canary Wharf is a high-income area where office workers are willing to pay more for quality and convenience. S – Social: Factors such as lifestyle and cultural diversity play a role. Younger consumers seek unique drinks, and the popularity of Asian culture increases acceptance of bubble tea. T – Technological: Digital platforms and delivery apps expand market reach and visibility. Platforms such as Uber Eats, Deliveroo, Just Eat, and Hungry Panda can be used to reach customers. L – Legal: Businesses must comply with food labeling, allergen information, and employment regulations. Menus should clearly indicate allergens such as milk and tapioca pearls, and the minimum wage law must be followed. E – Environmental: Sustainability and environmental awareness are increasingly important. Using biodegradable paper straws and eco-friendly cups aligns with London consumers’ ESG lifestyle expectations.
+
+2.  \(2\) What would be the next steps in the marketing planning process?
+
+    Situation analysis is a critical input into marketing strategy, involving the sequential application of segmentation, targeting, and positioning. Segmentation divides customers into groups. In this case, we segment the population in Canary Wharf based on age and lifestyle, identifying the main consumer group as financial professionals aged 25–35. Targeting aims to identify the most promising segment as the primary marketing focus and allocate resources to maximize profit. In this case, we target financial professionals aged 25–35 by offering corporate discounts or employee coupons, as well as hosting regular tasting events to attract young consumers seeking unique beverages. Positioning determines how to make customers clearly understand why they should choose our brand over competitors. For our target group, we can position ourselves as a bubble tea shop that truly understands young people. By improving tea quality and continuously introducing new flavours, we give adventurous young consumers more opportunities to explore. Special ingredients, such as honeyflavored pearls, can further enhance product differentiation and elevate beverage quality.
+
+3.  Use R code blocks to compute the customer acquisition costs for the three customer acquisition methods.
+
+```{r}
+## complete the code below
+# hand out bubble tea menus
+each_menu_costs = 0.50        #producing one menu costs £0.05
+each_menu_labor_cost = 0.10   #distributeing pre menu will pay a labor £0.10
+#Add two items together and get the total costs.
+cost_each_offer_blanket <- each_menu_costs + each_menu_labor_cost
+response_rate_blanket <- 0.02  # 2% response rate
+#calculate the customer acquisition cost 
+CAC_blanket <- cost_each_offer_blanket / response_rate_blanket
+CAC_blanket
+```
+
+```{r}
+## complete the code below
+#customer list
+per_customer_name = 0.60      #pre name costs £0.60 on customer list
+per_customer_postage = 0.10   #pre postage costs £0.10
+# 10% response rate，the list may contain some outdated or incorrect information
+#take a conservative approach and assume the actual response rate would be 5%
+cost_each_offer_targeted <- per_customer_name + per_customer_postage
+response_rate_targeted <- 0.05   
+#calculate the customer acquisition cost 
+CAC_targeted <- cost_each_offer_targeted / response_rate_targeted
+CAC_targeted
+```
+
+```{r}
+## complete the code below
+#search engine marketing (SEM)
+per_click_average_cost = 0.50 
+ads_user_click_rate = 0.20     # 20% are expected to click the link to view the menu
+purchase_rate <- 0.25          # 25% of those who click end up buying
+cost_per_click <- 0.50         # The cost per click (CPC) is on average £0.50
+response_rate_SEM <- ads_user_click_rate * purchase_rate
+##calculate the customer acquisition cost 
+CAC_SEM <- per_click_average_cost / purchase_rate
+CAC_SEM
+```
+
+```{r}
+# do not temper the below line of code; this is to print out your answer for TAs to check
+
+print(paste0("Customer Acquisition Costs for blanket mailing is £", CAC_blanket))
+
+print(paste0("Customer Acquisition Costs for targeted mailing is £",CAC_targeted) ) 
+
+print(paste0("Customer Acquisition Costs for SEM is £", CAC_SEM))
+
+```
+
+3.  Discuss the pros and cons of each of the three acquisition methods.
+
+    **Pros:**
+
+    The first method, directly handing out bubble tea menus, allows for direct interaction with customers, enabling the business to obtain immediate feedback and leave a lasting impression. At the same time, it helps enhance brand awareness, as frequent street distribution increases visibility and recognition within the local community.
+
+    The second method, sending promotional materials to targeted customers, enables highly precise targeting since the consulting agency has already pre-screened potential customers. This secondary data can improve the response rate. Moreover, it allows for more detailed product information and stronger brand presentation. Mailed materials can include complete designs, images, and descriptions, helping establish a professional brand image.
+
+    The third method, using search engine marketing (SEM), appears to be the most efficient. Search engines can cover the widest audience and eliminate the need for manual contact, allowing for large-scale online promotion at once. Additionally, the key advantage is that these customers are actively searching for information, showing the strongest motivation and initiative, unlike the first two methods where customers passively receive recommendations. Furthermore, SEM makes it easiest to track performance and analyze data in real time, helping businesses understand customer needs and make immediate improvements.
+
+    **Cons:**
+
+    The most obvious drawback of the first method is that it cannot track performance in real time, and its reach is limited to the specific community where the menus are distributed. It is also difficult to identify other potential customer groups outside that area. In addition, data collection is relatively slow, and the preparation process is time-consuming, as it requires printing materials and hiring staff to distribute them. Overall, it is not a very efficient approach.
+
+    The main drawback of the second method lies in its reliance on secondary data, which carries many uncertainties. For example, the data may be outdated, meaning that recipients are no longer interested, or the information may have been collected inaccurately. Therefore, the quality of the consulting agency is highly important. Furthermore, manually mailing each piece of material is inefficient, and there is a risk of lost mail during delivery, which may prevent successful information transfer and make it difficult to track customer responses.
+
+    Although the third method can quickly gather customer data, it lacks human interaction, which may result in a weaker brand impression. Online marketing makes it harder to build customer relationships and emotional connections. In addition, Google’s algorithms and advertising rules frequently change, requiring continuous monitoring and adjustment.
+
+4.  Discuss which acquisition method Tom should choose under what circumstances and explain why.
+
+    **Before the bubble tea shop opens (during the renovation stage):**
+
+    The first method can be used for promotion by distributing bubble tea menus on-site to collect first-hand consumer information. It also helps people in the Canary Wharf area become aware that a new bubble tea shop will soon open.
+
+    In addition to distributing menus, the shop can host sampling events or soft-opening promotions, allowing potential customers to experience the drinks in advance. This not only helps gather feedback but also builds anticipation for the grand opening.
+
+    The second method can also be used together by mailing promotional materials to potential customers. This approach is not affected by the website’s availability, although it is less effective than the first method because it cannot directly reach the local community.\
+    However, the mailing method can be enhanced by including grand opening coupons or limited-time discounts, or encouraging recipients to follow the brand’s social media accounts (such as Instagram or TikTok). This allows customers to engage with the brand online, share photos, or comment, which helps increase awareness before the official launch and encourages store visits.
+
+    **During the official operation stage:**
+
+    At the early stage, the website may not yet be fully established, making the third method difficult to implement, even though SEM is the most effective for data collection and performance tracking.\
+    However, SEM can be used after the store opens as a remarketing tool, targeting users who have previously searched for or visited the website. The collected data can then guide adjustments to the brand’s marketing strategy.
+
+# A Marketing Survey to Estimate Customer Metrics
+
+5.  Based on the case description, discuss any flaw(s) in the survey design and how would you improve the survey design
+
+    Overall, the first issue with this survey is that it was conducted only outside Heytea, without including other bubble tea brands. The second issue is that it was conducted only during weekday lunchtime, ignoring other time periods and weekend crowds. As a result, the sample cannot fully represent the potential bubble tea consumers in the Canary Wharf area. The survey should include customers from at least 3 different brands and cover various time periods to improve representativeness.
+
+    Single-question improvements:
+
+    Foodie:\
+    This question can be revised to “How much do you like bubble tea?” to better measure respondents’ self-perceived level of preference. The original yes/no question is too binary—respondents who do not consider themselves “enthusiasts” but still like or are willing to try bubble tea may be excluded, leading to biased results. Using the rating scale feature in Google Forms would provide a more accurate measure of preference.
+
+    Average_spend:\
+    This can be changed to “How much do you usually spend on one cup of bubble tea? Simply asking for a number can confuse whether the amount refers to one drink or multiple drinks, making it difficult to interpret customers’ price acceptance.
+
+    Retention_rate:\
+    This can be simplified to “Would you be willing to revisit the same bubble tea shop? (1 = Yes, 0 = No).”\
+    If the goal is to measure repurchase likelihood, expressing it as a percentage (e.g., XX%) would be more intuitive. Alternatively, using a five-star rating scale to indicate repurchase intention could improve response clarity and accuracy. The survey should include customers from at least three different brands and cover various time periods to improve representativeness.
+
+6.  Load the survey_data.csv file into R. Report the summary statistics for each of the two customer segments (foodie vs non-foodie). Comment on any noteworthy observations you feel relevant for Tom.
+
+    The most interesting finding is that although foodie customers have a slightly higher retention rate (0.85) than non-foodies (0.70), both groups show relatively high willingness to repurchase. This suggests that even non-enthusiasts, once they try bubble tea, may become regular customers. Therefore, the marketing focus should be on attracting the first group of customers. Once people make their first purchase, a stable base of returning buyers can naturally form.
+
+    Meanwhile, non-foodies account for a larger proportion of the market, indicating strong potential for growth. To increase sales, the shop should actively acquire new customers by offering first-purchase incentives, such as “£3 off when spending £4” or “second cup half price.” With high retention rates in both segments, strengthening the first conversion can effectively boost overall revenue.
+
+```{r}
+# load the data. 
+pacman::p_load(dplyr, modelsummary)
+#first, import the data
+survey_data <- read.csv("C:\\Users\\User\\OneDrive\\桌面\\Marketing Analytics\\First assignment files-20251015\\survey_data.csv")
+
+
+```
+
+```{r}
+# report the summary statistics
+#Check all data types in survey_data are correct and as expected
+glimpse(survey_data)
+#Check if any variables in survey_data have missing value
+datasummary_skim(survey_data, by = "foodie", fmt = 3)
+#no missing value
+```
+
+7.  Compute the average spending, average shopping frequency, and average retention rate for both foodie and non-foodie customer segments.
+
+```{r}
+# Compute and report the required statistics
+#finding the average of spending money on "non-foodie" by function "mean".
+#first, using $ to extract the "average_spend".
+#Then, define foodie == 0 to get the data of non-foodie
+#The next two line also the same concepts
+avg_spending_nonfoodie <- mean(survey_data$average_spend[survey_data$foodie == 0],na.rm = TRUE)
+avg_frequency_nonfoodie <- mean(survey_data$purchase_frequency[survey_data$foodie == 0],na.rm = TRUE)
+avg_retention_rate_nonfoodie <- mean(survey_data$retention_rate[survey_data$foodie == 0],na.rm = TRUE)
+
+avg_spending_nonfoodie
+avg_frequency_nonfoodie
+avg_retention_rate_nonfoodie
+```
+
+```{r}
+#finding the average of spending money on "foodie" by function "mean".
+#first, using $ to extract the "average_spend".
+#Then, define foodie == 1 to get the data of foodie
+#The next two line also the same concepts
+avg_spending_foodie <- mean(survey_data$average_spend[survey_data$foodie == 1],na.rm = TRUE)
+avg_frequency_foodie <- mean(survey_data$purchase_frequency[survey_data$foodie == 1],na.rm = TRUE)
+avg_retention_rate_foodie <- mean(survey_data$retention_rate[survey_data$foodie == 1],na.rm = TRUE)
+avg_spending_foodie
+avg_frequency_foodie
+avg_retention_rate_foodie
+```
+
+```{r}
+# This code block is for printing the results, pls do not modify
+print("Metrics for foodie segment:")
+print(paste("The average spending is £", avg_spending_foodie))
+print(paste("The average frequency is", avg_frequency_foodie))
+print(paste("The average retention rate is", avg_retention_rate_foodie))
+
+print("Metrics for non-foodie segment:")
+print(paste("The average spending is £", avg_spending_nonfoodie))
+print(paste("The average frequency is", avg_frequency_nonfoodie))
+print(paste("The average retention rate is", avg_retention_rate_nonfoodie))
+```
+
+# Customer Break-Even and Lifetime Value
+
+8.  Use R programming to compute the CLV for foodie customers**.** Discuss whether or not foodie customers are profitable to acquire.
+
+```{r}
+# Complete the code below
+#basic parameters
+N = 24                      #use 2years but calculate in monthly
+COGS =  0.45                #cost of goods sold
+annual_rate = 0.10          #annual rate of 10%
+monthly_rate = 0.10 / 12    #covert annual rate to monthly
+c = 0                       #no variable marketing cost
+
+# M = profit each period from selling products, so multiply avg_spending and avg_frequency of foodie. Then, multiply (1-COGS), which means the profit of goods
+M = avg_spending_foodie * avg_frequency_foodie * (1-COGS)
+#profit each period net of marketing cost
+g = M-c
+#build a sequence of monthly profit
+g_seq_foodie <- rep(g,N)
+
+#apply retention rate
+r_seq <- avg_retention_rate_foodie^(seq(1,N)-1)
+
+#apply discount factor
+k = monthly_rate
+d = 1/(1 + k)
+d_seq <- d^seq(1,N)
+#multipy discount and retention together
+g_seq_after_retention_discount_foodie <- g_seq_foodie * r_seq *d_seq
+
+#compute CLV,CLV=NPV-CAC, which means CLV=sum()-CAC_SEM
+CLV_foodie <- sum(g_seq_after_retention_discount_foodie)-CAC_SEM
+CLV_foodie
+```
+
+```{r}
+# This code block is for printing the results, pls do not modify
+print(paste0("The g_seq is ", g_seq_foodie[1:5]))
+
+print(paste0("The g_seq_after_retention_discount is ", g_seq_after_retention_discount_foodie[1:5]))
+
+print(paste0("The CLV for foodie customers is £", CLV_foodie))
+
+```
+
+9.  Use R programming to compute the CLV for non-foodie customers; use comments #... to explain your steps. Discuss whether non-foodie customers are profitable to acquire.
+
+```{r}
+# Complete the code below
+#basic parameters
+N = 24                      #use 2years but calculate in monthly
+COGS =  0.45                #cost of goods sold
+annual_rate = 0.10          #annual rate of 10%
+monthly_rate = 0.10 / 12    #covert annual rate to monthly
+c = 0                       #no variable marketing cost
+
+# M = profit each period from selling products, so multiply avg_spending and avg_frequency of nonfoodie. Then, multiply (1-COGS), which means the profit of goods
+M = avg_spending_nonfoodie * avg_frequency_nonfoodie * (1-COGS)
+#profit each period net of marketing cost
+g = M-c
+#build a sequence of monthly profit
+g_seq_nonfoodie <- rep(g,N)
+
+#apply retention rate
+r_seq <- avg_retention_rate_nonfoodie^(seq(1,N)-1)
+
+#apply discount factor
+k = monthly_rate
+d = 1/(1 + k)
+d_seq <- d^seq(1,N)
+#multipy discount and retention together
+g_seq_after_retention_discount_nonfoodie <- g_seq_nonfoodie * r_seq *d_seq
+
+#compute CLV,CLV=NPV-CAC, which means CLV=sum()-CAC_SEM
+CLV_nonfoodie <- sum(g_seq_after_retention_discount_nonfoodie)-CAC_SEM
+CLV_nonfoodie
+
+```
+
+```{r}
+# This code block is for printing the results, pls do not modify
+print(paste0("The g_seq is ", g_seq_nonfoodie[1:5]))
+
+print(paste0("The g_seq_after_retention_discount is ", g_seq_after_retention_discount_nonfoodie[1:5]))
+
+print(paste0("The CLV for non-foodie customers is £", CLV_nonfoodie))
+```
+
+# A Loyalty Program for Tom's Bubble Tea Shop
+
+10. Should Tom go ahead with the loyalty program for the bubble tea business? Explain your codes and calculations in detail.
+
+    **Foodie:**\
+    CLV increased from 162.6518 to 195.1164, up by about 20% (19.96%).
+
+    The uplift is strong; we should continue using it.
+
+    **Nonfoodie:\
+    **CLV decreased from 26.9441 to 25.16208, down by about 6.61%.\
+    The original metrics performed better; nonfoodie is not suitable for the loyalty program.
+
+```{r}
+# show your calcuations below; 
+# feel free to create your own variables for the calculation
+# Complete the code below
+#basic parameters
+N = 24                      #use 2years but calculate in monthly
+COGS =  0.45                #cost of goods sold
+annual_rate = 0.10          #annual rate of 10%
+monthly_rate = 0.10 / 12    #covert annual rate to monthly
+c = (4 * (avg_frequency_foodie/4))*COGS       #the expected cost of the free drink
+#base on £4 * (3.6 / 4) = £3.6.
+#the excepted cost is 4*(avg_frequency/4)*COGS
+#we need to multiply by COGS because we are calculating the actual cost
+
+# M = profit each period from selling products, so multiply avg_spending and avg_frequency of foodie. Then, multiply (1-COGS), which means the profit of goods
+M = avg_spending_foodie * avg_frequency_foodie * (1-COGS)
+#profit each period net of marketing cost
+g = M-c
+#build a sequence of monthly profit
+g_seq_foodie <- rep(g,N)
+
+#apply retention rate
+r_new <- 0.90
+r_seq <- r_new^(seq(1,N)-1)
+
+#apply discount factor
+k = monthly_rate
+d = 1/(1 + k)
+d_seq <- d^seq(1,N)
+
+#multipy discount and retention together
+g_seq_after_retention_discount_foodie <- g_seq_foodie * r_seq * d_seq 
+
+#compute CLV,CLV=NPV-CAC, which means CLV=sum()-CAC_SEM
+CLV_foodie <- sum(g_seq_after_retention_discount_foodie)-CAC_SEM
+CLV_foodie
+```
+
+```{r}
+# show your calcuations below; 
+# feel free to create your own variables for the calculation
+#basic parameters
+N = 24                      #use 2years but calculate in monthly
+COGS =  0.45                #cost of goods sold
+annual_rate = 0.10          #annual rate of 10%
+monthly_rate = 0.10 / 12    #covert annual rate to monthly
+c = (4 * (avg_frequency_nonfoodie/4))*COGS    #the expected cost of the free drink
+#base on £4 * (3.6 / 4) = £3.6.
+#the excepted cost is 4*(avg_frequency/4)*COGS
+#we need to multiply by COGS because we are calculating the actual cost
+
+# M = profit each period from selling products, so multiply avg_spending and avg_frequency of nonfoodie. Then, multiply (1-COGS), which means the profit of goods
+M = avg_spending_nonfoodie * avg_frequency_nonfoodie * (1-COGS)
+#profit each period net of marketing cost
+g = M-c
+#build a sequence of monthly profit
+g_seq_nonfoodie <- rep(g,N)
+
+#apply retention rate
+r_new <- 0.75
+r_seq <- r_new^(seq(1,N)-1)
+
+#apply discount factor
+k = monthly_rate
+d = 1/(1 + k)
+d_seq <- d^seq(1,N)
+#multipy discount and retention together
+g_seq_after_retention_discount_nonfoodie <- g_seq_nonfoodie * r_seq *d_seq
+
+#compute CLV,CLV=NPV-CAC, which means CLV=sum()-CAC_SEM
+CLV_nonfoodie <- sum(g_seq_after_retention_discount_nonfoodie)-CAC_SEM
+CLV_nonfoodie
+
+```
+
+11. Discuss how Tom can use CLV as a customer relationship management tool to guide his future marketing decisions
+
+    **Acquisition**
+
+    To increase the number of customers for the bubble tea shop, it is important to provide attractive first-purchase incentives that can effectively encourage trial and attract new customers. For example, offering a £3 discount for purchases over £4 can successfully motivate both foodie and non-foodie customers to make their first order, based on their average spending patterns. In addition, search engine marketing (SEM) should be applied to enhance online exposure. By carefully selecting and testing high-conversion keywords related to “bubble tea,” “Asian drinks,” or “Taiwan milk tea,” the shop can appear more frequently in search results, reaching a wider audience. Collaborating with local influencers or student communities near the shop may also strengthen word-of-mouth promotion and brand awareness. These acquisition activities ensure a steady inflow of new customers and increase brand visibility in competitive markets.
+
+    **Development**
+
+    To develop long-term relationships with existing customers, the shop can create independent social media accounts on Instagram or Facebook, encouraging customers to follow, join community groups, and interact online. These platforms can be used to share attractive visuals, seasonal promotions, and limited-edition flavors, helping to build an emotional connection with the brand. Moreover, by tracking SEM data and adjusting keywords regularly, the marketing team can refine the targeting strategy and optimize digital ad performance. Joining local food delivery platforms such as Uber Eats or Just eat can also broaden the customer base and convert online traffic into in-store visits, effectively linking offline and online channels.
+
+    **Retention**
+
+    To retain customers, the shop should provide periodic discount coupons or loyalty points that reward repeat purchases. According to the analytical results, allocating a higher marketing budget toward foodie customers is more effective, as they are more price-sensitive and respond better to discount incentives. After implementing the loyalty program, the CLV of foodie customers increased by almost 20%, proving that the program successfully enhanced their retention and lifetime value. Their average retention rate (0.850) is also significantly higher than that of non-foodie customers (0.703). Therefore, loyalty programs should continue focusing on high-value foodie segments, while lighter retention strategies—such as occasional promotions—can be used for non-foodie groups.
+
+12. What name would you give to the bubble tea shop ;-)
+
+    ReRe Bubble tea shop\~
+
+    Because "ReRe" sounds cute, and it means R is really, really good!
+
+    Thanks to R for helping us analyze the business case.
